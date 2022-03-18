@@ -15,23 +15,24 @@ class _HomeState extends State<Home> {
   String label = "";
   void classify(String path) async {
     await Tflite.loadModel(
-      model: "assets/tflite/model.tflite",
-      labels: "assets/tflite/labels.txt",
+      model: "assets/tflite/expiry.tflite",
+      labels: "assets/tflite/expiry.txt",
       isAsset: true,
     );
     List? recognitions = await Tflite.runModelOnImage(
-      path: path,
       numResults: 3,
+      path: path,
       threshold: 0.5,
     );
     if (recognitions!.isNotEmpty) {
       setState(
         () {
           label = recognitions[0]['label'];
+          print(recognitions);
           print(label);
         },
       );
-      if (label == "expired") {
+      if (label == "Expired") {
         Alert(
           context: context,
           type: AlertType.warning,
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
             )
           ],
         ).show();
-      } else if (label == "unripe") {
+      } else if (label == "Unripe") {
         Alert(
           context: context,
           type: AlertType.info,
@@ -111,7 +112,7 @@ class _HomeState extends State<Home> {
       context: context,
       type: AlertType.info,
       desc: "Where would you like to select the image from?",
-      closeFunction: (){
+      closeFunction: () {
         Navigator.of(context).pop();
       },
       buttons: [
@@ -154,7 +155,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Food Waste App"),
+        title: const Text("Perishably"),
       ),
       body: Column(
         children: [
@@ -163,12 +164,16 @@ class _HomeState extends State<Home> {
               //mainAxisAlignment: MainAxisAlignment.center,
               //crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Align(
-                  child: Image.asset(
-                    'assets/image.png',
-                    width: width / 1.25,
+                const Text(" "),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Align(
+                    child: Image.asset(
+                      'assets/logo.png',
+                      height: height / 4,
+                    ),
+                    alignment: Alignment.topCenter,
                   ),
-                  alignment: Alignment.topCenter,
                 ),
                 Expanded(
                   child: SizedBox(

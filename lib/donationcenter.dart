@@ -57,7 +57,7 @@ class _DonationCenterState extends State<DonationCenter> {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: 0,
-        title: const Text("Food Waste App"),
+        title: const Text("Perishably"),
       ),
       body: Visibility(
         child: WebView(
