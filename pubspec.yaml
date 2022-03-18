@@ -68,6 +68,7 @@ flutter:
       - assets/tflite/expiry.tflite
       - assets/tflite/expiry.txt
       - assets/tflite/
+      - assets/expiry-data.json
       - assets/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

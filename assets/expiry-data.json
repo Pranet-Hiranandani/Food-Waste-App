@@ -1,0 +1,22 @@
+{
+    "Apple": {
+        "Ripen": "2-8 days",
+        "Expire": "5-7 days"
+    },
+    "Banana": {
+        "Ripen": "1-5 days",
+        "Expire": "2-7 days"
+    },
+    "Mango": {
+        "Ripen": "3-5 days",
+        "Expire": "5-8 days"
+    },
+    "Peach": {
+        "Ripen": "1-6 days",
+        "Expire": "3-4 days"
+    },
+    "Pear": {
+        "Ripen": "4-7 days",
+        "Expire": "3-4 days"
+    }
+}

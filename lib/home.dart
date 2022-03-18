@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_waste_app/donationcenter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -25,6 +29,9 @@ class _HomeState extends State<Home> {
       threshold: 0.5,
     );
     if (recognitions!.isNotEmpty) {
+      final String response =
+          await rootBundle.loadString('assets/expiry-data.json');
+      final expirydata = await json.decode(response);
       setState(
         () {
           label = recognitions[0]['label'];
@@ -32,48 +39,105 @@ class _HomeState extends State<Home> {
           print(label);
         },
       );
-      if (label == "Expired") {
-        Alert(
-          context: context,
-          type: AlertType.warning,
-          desc:
-              "Your Food is expired!! Please do not consume it and dispose if off.",
-          closeFunction: () {
-            Navigator.of(context).pop();
-          },
-          buttons: [
-            DialogButton(
-              child: const Text("OK"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            )
-          ],
-        ).show();
-      } else if (label == "Unripe") {
-        Alert(
-          context: context,
-          type: AlertType.info,
-          desc:
-              "Your Food is unripe. Please wait for a few days and then consume.",
-          closeFunction: () {
-            Navigator.of(context).pop();
-          },
-          buttons: [
-            DialogButton(
-              child: const Text("OK"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            )
-          ],
-        ).show();
+      await Tflite.loadModel(
+        model: "assets/tflite/fruits.tflite",
+        labels: "assets/tflite/fruits.txt",
+        isAsset: true,
+      );
+      List? recognitions1 = await Tflite.runModelOnImage(
+        numResults: 5,
+        path: path,
+        threshold: 0.6,
+      );
+      print(recognitions1);
+      if (recognitions1!.isNotEmpty) {
+        String fruit = recognitions1[0]['label'];
+        if (label == "Expired") {
+          Alert(
+            context: context,
+            image: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 80,
+              backgroundImage: FileImage(
+                File(path),
+              ),
+            ),
+            desc:
+                "Your $fruit is expired!! Please do not consume it and dispose if off.",
+            closeFunction: () {
+              Navigator.of(context).pop();
+            },
+            buttons: [
+              DialogButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ).show();
+        } else if (label == "Unripe") {
+          String ripen = expirydata[fruit]["Ripen"];
+          Alert(
+            context: context,
+            image: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 80,
+              backgroundImage: FileImage(
+                File(path),
+              ),
+            ),
+            desc:
+                "Your $fruit is unripe. It will ripen in $ripen. Please consume it after $ripen.",
+            closeFunction: () {
+              Navigator.of(context).pop();
+            },
+            buttons: [
+              DialogButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ).show();
+        } else {
+          String expiry = expirydata[fruit]["Expire"];
+          Alert(
+            context: context,
+            image: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 80,
+              backgroundImage: FileImage(
+                File(path),
+              ),
+            ),
+            desc:
+                "Your $fruit is ripe. Consume it within $expiry. If you are unable to consume it within $expiry please use our app to donate it to a donation center.",
+            closeFunction: () {
+              Navigator.of(context).pop();
+            },
+            buttons: [
+              DialogButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
+          ).show();
+        }
       } else {
         Alert(
           context: context,
-          type: AlertType.info,
-          desc:
-              "Your Food is ripe. You can consume it now. If you are unable to consume it within 1-2 days please use our app to donate it to a donation center.",
+          image: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 80,
+            backgroundImage: FileImage(
+              File(path),
+            ),
+          ),
+          desc: "There was no fruit detected. Please try again.",
           closeFunction: () {
             Navigator.of(context).pop();
           },
@@ -87,23 +151,6 @@ class _HomeState extends State<Home> {
           ],
         ).show();
       }
-    } else {
-      Alert(
-        context: context,
-        type: AlertType.error,
-        desc: "There was no food detected. Please try again.",
-        closeFunction: () {
-          Navigator.of(context).pop();
-        },
-        buttons: [
-          DialogButton(
-            child: const Text("OK"),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          )
-        ],
-      ).show();
     }
   }
 
