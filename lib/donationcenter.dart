@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_waste_app/home.dart';
+import 'package:perishably/home.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_webview_pro/webview_flutter.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';

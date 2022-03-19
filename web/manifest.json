@@ -1,6 +1,6 @@
 {
-    "name": "food_waste_app",
-    "short_name": "food_waste_app",
+    "name": "perishably",
+    "short_name": "perishably",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

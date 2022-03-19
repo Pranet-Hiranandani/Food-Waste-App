@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_waste_app/donationcenter.dart';
+import 'package:perishably/donationcenter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:tflite/tflite.dart';
@@ -249,7 +248,7 @@ class _HomeState extends State<Home> {
                                 const Padding(
                                   padding: EdgeInsets.all(2),
                                   child: Text(
-                                    "Detect how Ripe your Food is",
+                                    "Detect how Ripe your Fruit is",
                                     style: TextStyle(fontSize: 20),
                                     textAlign: TextAlign.center,
                                   ),

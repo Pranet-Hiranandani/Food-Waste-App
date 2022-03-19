@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_waste_app/home.dart';
+import 'package:perishably/home.dart';
 
 void main() {
   runApp(const MyApp());
