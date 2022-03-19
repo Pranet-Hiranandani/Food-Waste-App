@@ -3,6 +3,8 @@
 
 An intuitive and innovative app that predicts the expiry of your fruits and helps you locate nearby food donation centers. 
 
+<img src="https://user-images.githubusercontent.com/83014418/159127173-cae0aef6-4c8e-4f82-84ef-ab84d8119b2e.png" width="350">
+
 ## Problem Statement
 
 In India, 23 million tonnes of food cereals, 12 million tonnes of fruits, and 21 million tonnes of vegetables are lost each year, with a total estimated value of 240 billion Rupees. A recent estimate by the Ministry of Food Processing is that agricultural produce worth 580 billion Rupees is wasted in India each year! Due to the lack of knowing whether they can donate food and knowledge of donation centers, people end up throwing their leftover food. 
