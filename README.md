@@ -29,7 +29,7 @@ To accurately predict an expiry date, I decided to use two layers. One for predi
 - Total of 4,653 images
 - Comprising of 5 classes- Apples, Bananas, Mangos, Peaches, Pears
 - Extracted from [Fruits 262](https://www.kaggle.com/datasets/aelchimminut/fruits262) dataset
-- 4188 images for training, 465 images for validation
+- 4190 images for training, 463 images for validation
 
 ## Machine Learning Model
 
