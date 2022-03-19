@@ -38,7 +38,7 @@ To accurately predict an expiry date, I decided to use two layers. One for predi
 
 ### Layer 1
 
-- Accuracy - 91%
+- Accuracy - 94.7%
 
 ![accuracylayer1](https://user-images.githubusercontent.com/83014418/159122116-fb7d543c-7e50-44d3-a947-911c91a08a0f.png)
 
@@ -48,7 +48,7 @@ To accurately predict an expiry date, I decided to use two layers. One for predi
 
 ### Layer 2
 
-- Accuracy - 87%
+- Accuracy - 89%
 
 ![accuracylayer2](https://user-images.githubusercontent.com/83014418/159122190-490ff95f-585d-4575-b169-067fce1f88aa.png)
 
