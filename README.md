@@ -1,5 +1,5 @@
 # Perishably
-<img src="https://user-images.githubusercontent.com/83014418/159121420-d75f4466-1b0d-48c5-b778-eb0e3a7db8b9.png" width="200">
+<img src="https://user-images.githubusercontent.com/83014418/159121420-d75f4466-1b0d-48c5-b778-eb0e3a7db8b9.png" width="300">
 
 An intuitive and innovative app that predicts the expiry of your fruits and helps you locate nearby food donation centers. 
 
