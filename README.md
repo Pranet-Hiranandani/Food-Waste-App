@@ -39,15 +39,21 @@ To accurately predict an expiry date, I decided to use two layers. One for predi
 ### Layer 1
 
 - Accuracy - 91%
+
 ![accuracylayer1](https://user-images.githubusercontent.com/83014418/159122116-fb7d543c-7e50-44d3-a947-911c91a08a0f.png)
+
 - Loss - 0.16
+
 ![losslayer1](https://user-images.githubusercontent.com/83014418/159122122-ea905083-37aa-431b-b91a-ab40e3d1a390.png)
 
 ### Layer 2
 
 - Accuracy - 87%
+
 ![accuracylayer2](https://user-images.githubusercontent.com/83014418/159122190-490ff95f-585d-4575-b169-067fce1f88aa.png)
+
 - Loss - 0.28
+
 ![losslayer2](https://user-images.githubusercontent.com/83014418/159122199-0becdeb6-9fb1-46ec-bc58-f8764eaf7c1c.png)
 
 ## App Development
