@@ -3,7 +3,7 @@
 
 An intuitive and innovative app that predicts the expiry of your fruits and helps you locate nearby food donation centers. 
 
-<p align="center" ><img src="https://user-images.githubusercontent.com/83014418/159127173-cae0aef6-4c8e-4f82-84ef-ab84d8119b2e.png" width="350"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/83014418/159127173-cae0aef6-4c8e-4f82-84ef-ab84d8119b2e.png" width="350"></p>
 
 ## Problem Statement
 
