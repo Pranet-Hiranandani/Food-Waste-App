@@ -1,9 +1,9 @@
 # Perishably
-<p align="center" ><img src="https://user-images.githubusercontent.com/83014418/159121420-d75f4466-1b0d-48c5-b778-eb0e3a7db8b9.png" width="350"></p>
+<img src="https://user-images.githubusercontent.com/83014418/159121420-d75f4466-1b0d-48c5-b778-eb0e3a7db8b9.png" width="350">
 
 An intuitive and innovative app that predicts the expiry of your fruits and helps you locate nearby food donation centers. 
 
-<img src="https://user-images.githubusercontent.com/83014418/159127173-cae0aef6-4c8e-4f82-84ef-ab84d8119b2e.png" width="350">
+<p align="center" ><img src="https://user-images.githubusercontent.com/83014418/159127173-cae0aef6-4c8e-4f82-84ef-ab84d8119b2e.png" width="350"></p>
 
 ## Problem Statement
 
