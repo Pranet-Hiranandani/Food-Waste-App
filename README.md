@@ -62,6 +62,7 @@ To accurately predict an expiry date, I decided to use two layers. One for predi
 
 - Built the app using Flutter, a multiplatform mobile app framework
 - Used Tensorflow Lite for machine learning on mobile
+- Google Maps to locate nearby food donation centers
 
 ## Future Plans
 - Further improve the accuracy of the model
